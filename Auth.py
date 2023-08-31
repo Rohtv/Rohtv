@@ -1,15 +1,13 @@
-import os
 from dotenv import load_dotenv
 from pymongo.mongo_client import MongoClient
 import streamlit as st
-import json
 from streamlit_option_menu import option_menu
 
 st.set_page_config(page_title="Reminder App", page_icon=":bell:", layout="centered")
 
 load_dotenv()
 
-uri = os.environ.get("MONGO_CONNECTION_STRING")
+uri = st.secrets["MONGO_CONNECTION_STRING"]
 
 # create a new client and connect to the server
 client = MongoClient(uri)
