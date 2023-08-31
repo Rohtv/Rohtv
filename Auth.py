@@ -67,7 +67,7 @@ def loginPage():
 def main():
 
     with st.sidebar:
-        selected = option_menu("Select a page", ["Login", "SignUp"])
+        selected = option_menu(None, ["Login", "SignUp"])
 
     if selected == "Login":
         loginPage()
