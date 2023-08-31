@@ -19,13 +19,7 @@ except Exception as e:
 
 
 db = client['powers']
-
-
 col = db['ability']
-
-
-
-@st.cache_data
 
 def signupPage():
      st.title("signup")
