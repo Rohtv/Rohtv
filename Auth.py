@@ -79,3 +79,7 @@ def main():
         loginPage()
     elif selected == "SignUp":
         signupPage()
+
+
+if __name__ == "__main__":
+    main()
