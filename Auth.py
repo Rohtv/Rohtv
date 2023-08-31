@@ -5,7 +5,6 @@ from streamlit_option_menu import option_menu
 
 st.set_page_config(page_title="Reminder App", page_icon=":bell:", layout="centered")
 
-load_dotenv()
 
 uri = st.secrets["MONGO_CONNECTION_STRING"]
 
