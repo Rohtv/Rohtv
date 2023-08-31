@@ -18,21 +18,21 @@ except Exception as e:
     print (e)
 
 
-db = client['powers']
+db = client['AllData']
 
 
-col = db['ability']
+col = db['Users']
 
 
 
-@st.cache_data
+
 
 def signupPage():
      st.title("signup")
      username = st.text_input("Username", key="svusername")
      password = st.text_input("Password", type="password", key="password")
      a= st.number_input("Age", min_value=18, max_value=100, step=1, key="age")
-     p = st.number_input("Phone", min_value=1000000000, max_value=9999999999, step=1, key="phone")
+     p = st.number_input("Phone", min_value=+91, max_value=9999999999, key="phone")
      m= st.text_input("Email", key="mail")  
 
     
@@ -73,7 +73,7 @@ def loginPage():
 def main():
 
     with st.sidebar:
-        selected = option_menu("Select a page", ["Login", "SignUp"])
+        selected = option_menu(None, ["Login", "SignUp"])
 
     if selected == "Login":
         loginPage()
