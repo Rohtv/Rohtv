@@ -1,4 +1,4 @@
-from dotenv import load_dotenv
+
 from pymongo.mongo_client import MongoClient
 import streamlit as st
 from streamlit_option_menu import option_menu
