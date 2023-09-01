@@ -2,6 +2,9 @@
 from pymongo.mongo_client import MongoClient
 import streamlit as st
 from streamlit_option_menu import option_menu
+import certifi
+
+ca = certifi.where()
 
 st.set_page_config(page_title="Reminder App", page_icon=":bell:", layout="centered")
 
@@ -9,7 +12,7 @@ st.set_page_config(page_title="Reminder App", page_icon=":bell:", layout="center
 uri = st.secrets["MONGO_CONNECTION_STRING"]
 
 # create a new client and connect to the server
-client = MongoClient(uri)
+client = MongoClient(uri, tlsCAFile=ca)
 
 try:
     client.admin.command('ping')
