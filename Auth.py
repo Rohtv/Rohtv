@@ -12,7 +12,7 @@ st.set_page_config(page_title="Reminder App", page_icon=":bell:", layout="center
 uri = st.secrets["MONGO_CONNECTION_STRING"]
 
 # create a new client and connect to the server
-client = MongoClient(uri, tlsCAFile=ca, ssl_cert_reqs=ssl.CERT_NONE)
+client = MongoClient(uri, tlsCAFile=ca, ssl=True, ssl_cert_reqs=ssl.CERT_NONE)
 
 try:
     client.admin.command('ping')
